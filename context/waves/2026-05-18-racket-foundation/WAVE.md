@@ -18,7 +18,9 @@ into engine-side frame plans.
 | 01 | Workspace foundation | complete | Created repo skeleton, docs, skills, and first COURT-consuming frame plan. |
 | 02 | Wimbledon diagnostics | complete | Added adapter compatibility diagnostics for COURT action, scene, provenance, and unsupported-feature boundaries. |
 | 03 | Native loop spike | complete | Added a deterministic windowless runtime loop over frame plans. |
-| 04 | Browser/engine comparison | pending | Compare RACKET's native proof against browser UX needs. |
+| 04 | Product fixture smokes | complete | AMAZE Prism Vault and TIGRIS Parliament run through RACKET diagnostics/runtime tests from product repos. |
+| 05 | Foundation closeout | complete | RACKET pauses at deterministic frame plans, diagnostics, and windowless runtime loops. |
+| 06 | Browser/engine comparison | deferred | Compare RACKET's native proof against browser UX needs only when a product fixture requires it. |
 
 ## Success criteria
 
@@ -30,6 +32,9 @@ into engine-side frame plans.
   rules.
 - Runtime loop can step deterministic frame plans without opening a window,
   rendering, or executing product rules.
+- Product repos can smoke COURT fixtures through RACKET without moving product
+  rules into `racket-core`.
+- Closeout records renderer/backend/input selection as deferred.
 - `cargo test --quiet` passes.
 
 ## Validation

@@ -25,6 +25,13 @@ cargo test --quiet
 - RACKET can step deterministic frame plans without opening a window; renderer
   selection remains future work.
 
+## Current stop point
+
+The foundation wave is wrapped at frame plans, compatibility diagnostics, and a
+deterministic windowless runtime loop. AMAZE Prism Vault and TIGRIS Parliament
+exercise RACKET from their product repos. Renderer, backend, and input selection
+remain deferred until a product fixture needs them.
+
 ## Non-goals
 
 - No product-specific gameplay in `racket-core`.
