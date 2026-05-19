@@ -1,0 +1,4 @@
+[workspace]
+members = ["crates/racket-core"]
+resolver = "2"
+

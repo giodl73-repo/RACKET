@@ -1,0 +1,10 @@
+[package]
+name = "racket-core"
+version = "0.1.0"
+edition = "2021"
+description = "First native engine adapter for COURT scalable experiences."
+license = "MIT"
+
+[dependencies]
+court-core = { path = "..\\..\\..\\court\\crates\\court-core" }
+
