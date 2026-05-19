@@ -16,8 +16,9 @@ into engine-side frame plans.
 | Pulse | Title | Status | Outcome |
 |------:|-------|--------|---------|
 | 01 | Workspace foundation | complete | Created repo skeleton, docs, skills, and first COURT-consuming frame plan. |
-| 02 | Native loop spike | pending | Add a minimal runtime loop or backend spike over frame plans. |
-| 03 | Browser/engine comparison | pending | Compare RACKET's native proof against browser UX needs. |
+| 02 | Wimbledon diagnostics | complete | Added adapter compatibility diagnostics for COURT action, scene, provenance, and unsupported-feature boundaries. |
+| 03 | Native loop spike | pending | Add a minimal runtime loop or backend spike over frame plans. |
+| 04 | Browser/engine comparison | pending | Compare RACKET's native proof against browser UX needs. |
 
 ## Success criteria
 
@@ -25,6 +26,8 @@ into engine-side frame plans.
 - Product plan names COURT as the upstream contract.
 - Wave/pulse scaffolding exists.
 - Skills exist for future wave and pulse execution.
+- Adapter diagnostics report unsupported COURT features without owning product
+  rules.
 - `cargo test --quiet` passes.
 
 ## Validation
