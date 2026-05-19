@@ -22,6 +22,8 @@ cargo test --quiet
 - Product repos own rules, fantasy, and scene direction.
 - RACKET reports unsupported COURT features explicitly instead of silently
   dropping scene, action, provenance, or assessment intent.
+- RACKET can step deterministic frame plans without opening a window; renderer
+  selection remains future work.
 
 ## Non-goals
 

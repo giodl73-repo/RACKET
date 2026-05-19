@@ -10,7 +10,8 @@ surfaces.
 ## Product promise
 
 Given a COURT snapshot, RACKET can produce a native engine plan without knowing
-the product's rules.
+the product's rules. The first runtime loop is deterministic and windowless: it
+steps frame plans for smoke validation without choosing a renderer.
 
 ## Dependency placement
 
@@ -25,7 +26,9 @@ the product's rules.
 1. Define `racket-core`.
 2. Consume `court-core` by path while remotes/submodules are being established.
 3. Translate a COURT snapshot into a frame plan.
-4. Prepare for a future Macroquad or browser-backed renderer adapter.
+4. Report adapter diagnostics for unsupported COURT features.
+5. Step deterministic frame plans in a windowless runtime loop.
+6. Prepare for a future Macroquad or browser-backed renderer adapter.
 
 ## Review gate
 

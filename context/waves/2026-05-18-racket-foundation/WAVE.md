@@ -17,7 +17,7 @@ into engine-side frame plans.
 |------:|-------|--------|---------|
 | 01 | Workspace foundation | complete | Created repo skeleton, docs, skills, and first COURT-consuming frame plan. |
 | 02 | Wimbledon diagnostics | complete | Added adapter compatibility diagnostics for COURT action, scene, provenance, and unsupported-feature boundaries. |
-| 03 | Native loop spike | pending | Add a minimal runtime loop or backend spike over frame plans. |
+| 03 | Native loop spike | complete | Added a deterministic windowless runtime loop over frame plans. |
 | 04 | Browser/engine comparison | pending | Compare RACKET's native proof against browser UX needs. |
 
 ## Success criteria
@@ -28,6 +28,8 @@ into engine-side frame plans.
 - Skills exist for future wave and pulse execution.
 - Adapter diagnostics report unsupported COURT features without owning product
   rules.
+- Runtime loop can step deterministic frame plans without opening a window,
+  rendering, or executing product rules.
 - `cargo test --quiet` passes.
 
 ## Validation
