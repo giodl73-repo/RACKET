@@ -27,6 +27,17 @@ the product's rules.
 3. Translate a COURT snapshot into a frame plan.
 4. Prepare for a future Macroquad or browser-backed renderer adapter.
 
+## Review gate
+
+Before RACKET adds a runtime loop or backend, align with COURT's
+`specs\engine-adapter-contract.md`:
+
+- consume reviewed COURT snapshot fields,
+- preserve action availability and scene role intent,
+- report unsupported features explicitly,
+- keep product rules out of `racket-core`,
+- prove deterministic frame-plan smoke checks.
+
 ## Non-goals
 
 - RACKET does not own product rules.

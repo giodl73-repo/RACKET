@@ -6,6 +6,9 @@ RACKET consumes COURT contracts and turns snapshots into native engine frame
 plans. It should prove rendering/input/runtime behavior without owning product
 rules.
 
+RACKET's next expansion is gated by COURT's MIT-course-grounded specs, especially
+`..\court\specs\engine-adapter-contract.md`.
+
 ## First command
 
 ```powershell
@@ -17,6 +20,8 @@ cargo test --quiet
 - COURT defines portable state/action/snapshot/scene contracts.
 - RACKET consumes those contracts as an engine adapter.
 - Product repos own rules, fantasy, and scene direction.
+- RACKET reports unsupported COURT features explicitly instead of silently
+  dropping scene, action, provenance, or assessment intent.
 
 ## Non-goals
 
