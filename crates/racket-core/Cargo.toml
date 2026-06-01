@@ -6,5 +6,4 @@ description = "First native engine adapter for COURT scalable experiences."
 license = "MIT"
 
 [dependencies]
-court-core = { path = "..\\..\\..\\court\\crates\\court-core" }
-
+court-core = { git = "https://github.com/giodl73-repo/COURT.git", package = "court-core", branch = "master" }
