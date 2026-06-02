@@ -6,30 +6,161 @@
 use court_core::{
     CourtActionAvailability, CourtProvenanceClass, CourtSceneRole, CourtSnapshot, CourtSurfaceKind,
 };
+use rune_core::{ContractRegistration, DescriptorCollectionDocument, RuneContract};
+use rune_derive::RuneContract as DeriveRuneContract;
 
-#[derive(Debug, Clone, PartialEq, Eq)]
+pub const RUNE_COLLECTION_ID: &str = "racket.adapter_contracts";
+pub const RUNE_COLLECTION_VERSION: &str = "v0";
+
+#[derive(Debug, Clone, PartialEq, Eq, DeriveRuneContract)]
+#[rune(
+    id = "racket.frame_plan",
+    version = "v0",
+    kind = "artifact",
+    requirement = "RUNE-REQ-076",
+    invariant(id = "racket.frame_plan.title.present", text = "title is not empty"),
+    extension(
+        namespace = "racket.frame_plan",
+        name = "adoption_lane",
+        value = "fourth_games_spike"
+    )
+)]
 pub struct RacketFramePlan {
+    #[rune_field(
+        required = true,
+        sensitivity = "public",
+        example = "Demo Court",
+        stability = "stable"
+    )]
     pub title: String,
+    #[rune_field(
+        required = true,
+        sensitivity = "public",
+        example = "Native2d",
+        stability = "stable"
+    )]
     pub surface: CourtSurfaceKind,
+    #[rune_field(
+        required = true,
+        sensitivity = "public",
+        example = "0.1.0",
+        stability = "stable"
+    )]
     pub experience_version: String,
+    #[rune_field(
+        required = true,
+        sensitivity = "public",
+        example = "court.scene.v1",
+        stability = "stable"
+    )]
     pub scene_contract_version: String,
+    #[rune_field(
+        required = true,
+        unit = "command",
+        min = "0",
+        sensitivity = "public",
+        example = "3",
+        stability = "stable"
+    )]
     pub command_count: usize,
+    #[rune_field(
+        required = true,
+        unit = "command",
+        min = "0",
+        sensitivity = "public",
+        example = "1",
+        stability = "stable"
+    )]
     pub player_command_count: usize,
+    #[rune_field(
+        required = true,
+        unit = "node",
+        min = "0",
+        sensitivity = "public",
+        example = "1",
+        stability = "stable"
+    )]
     pub surface_nodes: usize,
+    #[rune_field(
+        required = true,
+        unit = "node",
+        min = "0",
+        sensitivity = "public",
+        example = "1",
+        stability = "stable"
+    )]
     pub actor_nodes: usize,
+    #[rune_field(
+        required = true,
+        unit = "node",
+        min = "0",
+        sensitivity = "public",
+        example = "1",
+        stability = "stable"
+    )]
     pub prop_nodes: usize,
+    #[rune_field(
+        required = true,
+        unit = "feature",
+        min = "0",
+        sensitivity = "public",
+        example = "1",
+        stability = "stable"
+    )]
     pub unsupported_scene_feature_count: usize,
+    #[rune_field(
+        required = true,
+        sensitivity = "public",
+        example = "[]",
+        stability = "stable"
+    )]
     pub diagnostics: Vec<RacketAdapterDiagnostic>,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, DeriveRuneContract)]
+#[rune(
+    id = "racket.adapter_diagnostic",
+    version = "v0",
+    kind = "event",
+    requirement = "RUNE-REQ-076",
+    invariant(
+        id = "racket.adapter_diagnostic.code.present",
+        text = "code is not empty"
+    )
+)]
 pub struct RacketAdapterDiagnostic {
+    #[rune_field(
+        required = true,
+        sensitivity = "public",
+        example = "unsupported-scene-role",
+        stability = "stable"
+    )]
     pub code: String,
+    #[rune_field(
+        required = true,
+        sensitivity = "public",
+        example = "Scene node cannot be rendered yet.",
+        stability = "stable"
+    )]
     pub message: String,
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, DeriveRuneContract)]
+#[rune(
+    id = "racket.runtime_config",
+    version = "v0",
+    kind = "state",
+    requirement = "RUNE-REQ-076"
+)]
 pub struct RacketRuntimeConfig {
+    #[rune_field(
+        required = true,
+        unit = "frame",
+        min = "0",
+        sensitivity = "public",
+        example = "3",
+        stability = "stable"
+    )]
     pub max_frames: u32,
 }
 
@@ -39,17 +170,67 @@ impl Default for RacketRuntimeConfig {
     }
 }
 
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, DeriveRuneContract)]
+#[rune(
+    id = "racket.runtime_frame",
+    version = "v0",
+    kind = "event",
+    requirement = "RUNE-REQ-076"
+)]
 pub struct RacketRuntimeFrame {
+    #[rune_field(
+        required = true,
+        unit = "frame",
+        min = "0",
+        sensitivity = "public",
+        example = "0",
+        stability = "stable"
+    )]
     pub frame_index: u32,
+    #[rune_field(
+        required = true,
+        sensitivity = "public",
+        example = "RacketFramePlan",
+        stability = "stable"
+    )]
     pub plan: RacketFramePlan,
+    #[rune_field(
+        required = true,
+        sensitivity = "public",
+        example = "true",
+        stability = "stable"
+    )]
     pub ready: bool,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, DeriveRuneContract)]
+#[rune(
+    id = "racket.runtime_report",
+    version = "v0",
+    kind = "artifact",
+    requirement = "RUNE-REQ-076"
+)]
 pub struct RacketRuntimeReport {
+    #[rune_field(
+        required = true,
+        sensitivity = "public",
+        example = "[]",
+        stability = "stable"
+    )]
     pub frames: Vec<RacketRuntimeFrame>,
+    #[rune_field(
+        required = true,
+        sensitivity = "public",
+        example = "true",
+        stability = "stable"
+    )]
     pub completed: bool,
+    #[rune_field(
+        required = true,
+        sensitivity = "public",
+        example = "[]",
+        stability = "stable"
+    )]
     pub diagnostics: Vec<RacketAdapterDiagnostic>,
 }
 
@@ -204,6 +385,38 @@ fn is_supported_scene_role(role: CourtSceneRole) -> bool {
             | CourtSceneRole::Prop
             | CourtSceneRole::Hud
             | CourtSceneRole::Text
+    )
+}
+
+pub const RUNE_CONTRACTS: &[ContractRegistration] = &[
+    ContractRegistration {
+        name: "RacketFramePlan",
+        descriptor: RacketFramePlan::descriptor,
+    },
+    ContractRegistration {
+        name: "RacketAdapterDiagnostic",
+        descriptor: RacketAdapterDiagnostic::descriptor,
+    },
+    ContractRegistration {
+        name: "RacketRuntimeConfig",
+        descriptor: RacketRuntimeConfig::descriptor,
+    },
+    ContractRegistration {
+        name: "RacketRuntimeFrame",
+        descriptor: RacketRuntimeFrame::descriptor,
+    },
+    ContractRegistration {
+        name: "RacketRuntimeReport",
+        descriptor: RacketRuntimeReport::descriptor,
+    },
+];
+
+pub fn rune_descriptor_collection() -> Result<DescriptorCollectionDocument, String> {
+    DescriptorCollectionDocument::from_registrations(
+        RUNE_COLLECTION_ID,
+        RUNE_COLLECTION_VERSION,
+        RUNE_CONTRACTS,
+        "RACKET-RUNE-001",
     )
 }
 
@@ -383,5 +596,42 @@ mod tests {
         assert_eq!(report.frames[2].frame_index, 2);
         assert_eq!(report.frames[0].plan.title, "Loop Demo");
         assert_eq!(report.diagnostics.len(), 0);
+    }
+
+    #[test]
+    fn rune_contract_registry_preserves_adapter_metadata() {
+        let collection = rune_descriptor_collection().expect("rune descriptor collection");
+
+        assert_eq!(collection.collection_id, RUNE_COLLECTION_ID);
+        assert_eq!(collection.descriptors[0].id, "racket.frame_plan");
+        assert_eq!(
+            collection.descriptors[0].fields[4].metadata.unit,
+            Some("command".to_owned())
+        );
+        assert_eq!(
+            collection.descriptors[0].fields[6].metadata.unit,
+            Some("node".to_owned())
+        );
+        assert_eq!(
+            collection.descriptors[2].fields[0].metadata.unit,
+            Some("frame".to_owned())
+        );
+        assert_eq!(
+            collection.descriptors[4].fields[1].metadata.required,
+            Some(true)
+        );
+    }
+
+    #[test]
+    fn rune_contract_registry_matches_retained_fixture() {
+        let collection = rune_descriptor_collection().expect("rune descriptor collection");
+        let actual = serde_json::to_string_pretty(&collection).expect("serialize rune collection");
+        let expected = include_str!("../../../docs/rune/adapter_contracts.json");
+
+        assert_eq!(normalize_newlines(&actual), normalize_newlines(expected));
+    }
+
+    fn normalize_newlines(value: &str) -> String {
+        value.replace("\r\n", "\n").trim_end().to_owned()
     }
 }

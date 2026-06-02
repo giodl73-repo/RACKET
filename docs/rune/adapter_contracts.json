@@ -1,0 +1,318 @@
+{
+  "collection_id": "racket.adapter_contracts",
+  "collection_version": "v0",
+  "descriptors": [
+    {
+      "id": "racket.frame_plan",
+      "version": "v0",
+      "kind": "artifact",
+      "rust_type": "RacketFramePlan",
+      "fields": [
+        {
+          "name": "title",
+          "rust_type": "String",
+          "metadata": {
+            "required": true,
+            "sensitivity": "public",
+            "example": "Demo Court",
+            "stability": "stable"
+          }
+        },
+        {
+          "name": "surface",
+          "rust_type": "CourtSurfaceKind",
+          "metadata": {
+            "required": true,
+            "sensitivity": "public",
+            "example": "Native2d",
+            "stability": "stable"
+          }
+        },
+        {
+          "name": "experience_version",
+          "rust_type": "String",
+          "metadata": {
+            "required": true,
+            "sensitivity": "public",
+            "example": "0.1.0",
+            "stability": "stable"
+          }
+        },
+        {
+          "name": "scene_contract_version",
+          "rust_type": "String",
+          "metadata": {
+            "required": true,
+            "sensitivity": "public",
+            "example": "court.scene.v1",
+            "stability": "stable"
+          }
+        },
+        {
+          "name": "command_count",
+          "rust_type": "usize",
+          "metadata": {
+            "required": true,
+            "unit": "command",
+            "min": "0",
+            "sensitivity": "public",
+            "example": "3",
+            "stability": "stable"
+          }
+        },
+        {
+          "name": "player_command_count",
+          "rust_type": "usize",
+          "metadata": {
+            "required": true,
+            "unit": "command",
+            "min": "0",
+            "sensitivity": "public",
+            "example": "1",
+            "stability": "stable"
+          }
+        },
+        {
+          "name": "surface_nodes",
+          "rust_type": "usize",
+          "metadata": {
+            "required": true,
+            "unit": "node",
+            "min": "0",
+            "sensitivity": "public",
+            "example": "1",
+            "stability": "stable"
+          }
+        },
+        {
+          "name": "actor_nodes",
+          "rust_type": "usize",
+          "metadata": {
+            "required": true,
+            "unit": "node",
+            "min": "0",
+            "sensitivity": "public",
+            "example": "1",
+            "stability": "stable"
+          }
+        },
+        {
+          "name": "prop_nodes",
+          "rust_type": "usize",
+          "metadata": {
+            "required": true,
+            "unit": "node",
+            "min": "0",
+            "sensitivity": "public",
+            "example": "1",
+            "stability": "stable"
+          }
+        },
+        {
+          "name": "unsupported_scene_feature_count",
+          "rust_type": "usize",
+          "metadata": {
+            "required": true,
+            "unit": "feature",
+            "min": "0",
+            "sensitivity": "public",
+            "example": "1",
+            "stability": "stable"
+          }
+        },
+        {
+          "name": "diagnostics",
+          "rust_type": "Vec < RacketAdapterDiagnostic >",
+          "metadata": {
+            "required": true,
+            "sensitivity": "public",
+            "example": "[]",
+            "stability": "stable"
+          }
+        }
+      ],
+      "invariants": [
+        {
+          "id": "racket.frame_plan.title.present",
+          "text": "title is not empty"
+        }
+      ],
+      "trace_links": [
+        {
+          "relation": "requirement",
+          "target": "RUNE-REQ-076"
+        }
+      ],
+      "extensions": [
+        {
+          "namespace": "racket.frame_plan",
+          "name": "adoption_lane",
+          "value": "fourth_games_spike"
+        }
+      ]
+    },
+    {
+      "id": "racket.adapter_diagnostic",
+      "version": "v0",
+      "kind": "event",
+      "rust_type": "RacketAdapterDiagnostic",
+      "fields": [
+        {
+          "name": "code",
+          "rust_type": "String",
+          "metadata": {
+            "required": true,
+            "sensitivity": "public",
+            "example": "unsupported-scene-role",
+            "stability": "stable"
+          }
+        },
+        {
+          "name": "message",
+          "rust_type": "String",
+          "metadata": {
+            "required": true,
+            "sensitivity": "public",
+            "example": "Scene node cannot be rendered yet.",
+            "stability": "stable"
+          }
+        }
+      ],
+      "invariants": [
+        {
+          "id": "racket.adapter_diagnostic.code.present",
+          "text": "code is not empty"
+        }
+      ],
+      "trace_links": [
+        {
+          "relation": "requirement",
+          "target": "RUNE-REQ-076"
+        }
+      ],
+      "extensions": []
+    },
+    {
+      "id": "racket.runtime_config",
+      "version": "v0",
+      "kind": "state",
+      "rust_type": "RacketRuntimeConfig",
+      "fields": [
+        {
+          "name": "max_frames",
+          "rust_type": "u32",
+          "metadata": {
+            "required": true,
+            "unit": "frame",
+            "min": "0",
+            "sensitivity": "public",
+            "example": "3",
+            "stability": "stable"
+          }
+        }
+      ],
+      "invariants": [],
+      "trace_links": [
+        {
+          "relation": "requirement",
+          "target": "RUNE-REQ-076"
+        }
+      ],
+      "extensions": []
+    },
+    {
+      "id": "racket.runtime_frame",
+      "version": "v0",
+      "kind": "event",
+      "rust_type": "RacketRuntimeFrame",
+      "fields": [
+        {
+          "name": "frame_index",
+          "rust_type": "u32",
+          "metadata": {
+            "required": true,
+            "unit": "frame",
+            "min": "0",
+            "sensitivity": "public",
+            "example": "0",
+            "stability": "stable"
+          }
+        },
+        {
+          "name": "plan",
+          "rust_type": "RacketFramePlan",
+          "metadata": {
+            "required": true,
+            "sensitivity": "public",
+            "example": "RacketFramePlan",
+            "stability": "stable"
+          }
+        },
+        {
+          "name": "ready",
+          "rust_type": "bool",
+          "metadata": {
+            "required": true,
+            "sensitivity": "public",
+            "example": "true",
+            "stability": "stable"
+          }
+        }
+      ],
+      "invariants": [],
+      "trace_links": [
+        {
+          "relation": "requirement",
+          "target": "RUNE-REQ-076"
+        }
+      ],
+      "extensions": []
+    },
+    {
+      "id": "racket.runtime_report",
+      "version": "v0",
+      "kind": "artifact",
+      "rust_type": "RacketRuntimeReport",
+      "fields": [
+        {
+          "name": "frames",
+          "rust_type": "Vec < RacketRuntimeFrame >",
+          "metadata": {
+            "required": true,
+            "sensitivity": "public",
+            "example": "[]",
+            "stability": "stable"
+          }
+        },
+        {
+          "name": "completed",
+          "rust_type": "bool",
+          "metadata": {
+            "required": true,
+            "sensitivity": "public",
+            "example": "true",
+            "stability": "stable"
+          }
+        },
+        {
+          "name": "diagnostics",
+          "rust_type": "Vec < RacketAdapterDiagnostic >",
+          "metadata": {
+            "required": true,
+            "sensitivity": "public",
+            "example": "[]",
+            "stability": "stable"
+          }
+        }
+      ],
+      "invariants": [],
+      "trace_links": [
+        {
+          "relation": "requirement",
+          "target": "RUNE-REQ-076"
+        }
+      ],
+      "extensions": []
+    }
+  ]
+}

@@ -32,9 +32,15 @@ deterministic windowless runtime loop. AMAZE Prism Vault and TIGRIS Parliament
 exercise RACKET from their product repos. Renderer, backend, and input selection
 remain deferred until a product fixture needs them.
 
+## RUNE contract evidence
+
+RACKET retains AI-readable RUNE descriptor evidence for its adapter contracts at
+`docs\rune\adapter_contracts.json`. See `docs\rune\README.md` for the boundary:
+descriptors cover frame plans, diagnostics, and windowless runtime reports while
+COURT owns experience contracts and product repos own rules/content.
+
 ## Non-goals
 
 - No product-specific gameplay in `racket-core`.
 - No full asset editor in the foundation wave.
 - No fork of COURT contracts.
-

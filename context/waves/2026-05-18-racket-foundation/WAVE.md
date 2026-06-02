@@ -21,6 +21,7 @@ into engine-side frame plans.
 | 04 | Product fixture smokes | complete | AMAZE Prism Vault and TIGRIS Parliament run through RACKET diagnostics/runtime tests from product repos. |
 | 05 | Foundation closeout | complete | RACKET pauses at deterministic frame plans, diagnostics, and windowless runtime loops. |
 | 06 | Browser/engine comparison | deferred | Compare RACKET's native proof against browser UX needs only when a product fixture requires it. |
+| 07 | RUNE adapter contracts | complete | Retained RUNE descriptors for frame-plan, diagnostic, and windowless runtime evidence. |
 
 ## Success criteria
 
@@ -35,6 +36,8 @@ into engine-side frame plans.
 - Product repos can smoke COURT fixtures through RACKET without moving product
   rules into `racket-core`.
 - Closeout records renderer/backend/input selection as deferred.
+- RUNE adapter contracts expose frame-plan/runtime evidence without changing the
+  COURT or product-rule boundary.
 - `cargo test --quiet` passes.
 
 ## Validation
@@ -42,5 +45,4 @@ into engine-side frame plans.
 - `cargo fmt --check`
 - `cargo test --quiet`
 - `git diff --check`
-
 

@@ -29,6 +29,8 @@ steps frame plans for smoke validation without choosing a renderer.
 4. Report adapter diagnostics for unsupported COURT features.
 5. Step deterministic frame plans in a windowless runtime loop.
 6. Prepare for a future Macroquad or browser-backed renderer adapter.
+7. Retain RUNE descriptor evidence for the stable adapter records so AI agents
+   can inspect frame-plan and runtime evidence without source scraping.
 
 ## Review gate
 
@@ -48,4 +50,3 @@ Before RACKET adds a runtime loop or backend, align with COURT's
   layer and can adopt rendering backend(s) once the contract is stable.
 - RACKET does not choose final art, animation, or asset workflows in the first
   wave.
-
