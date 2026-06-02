@@ -26,6 +26,11 @@ Baseline date: 2026-06-01
 | GAP-RCK-002 | Renderer/backend readiness checklist remains deferred. | Create work package only when product fixture need appears. |
 | GAP-RCK-003 | Product fixture evidence labels need execution proof. | Create work package for AMAZE/TIGRIS fixture diagnostics. |
 
+Deferred specification visibility: SPEC-RCK-UNK-001, SPEC-RCK-UNK-002, and
+SPEC-RCK-UNK-003 are intentionally dispositioned through later interface,
+validation, trace, and gated work-package rows rather than treated as accepted
+implementation specs.
+
 ## Role Review Summary
 
 RACKET does not currently expose `.roles/`; documented product lenses were used.

@@ -22,6 +22,14 @@ Baseline date: 2026-06-01
 | `docs/vtrace/VALIDATION.md` | reviewed |
 | `docs/vtrace/TRACE.md` | reviewed |
 
+## Review Lanes
+
+| Lane | Required | Decision | Evidence / Rationale |
+|---|---|---|---|
+| COURT adapter contract | yes | accepted | Adapter taxonomy and diagnostics are tracked through work-package closure. |
+| Product boundary | yes | accepted | Product fixture proof does not transfer product rules into RACKET. |
+| Renderer/backend gate | yes | accepted_with_risk | Expansion remains gated until an explicit product fixture need appears. |
+
 ## Fixed-Point Findings
 
 | Finding ID | Finding | Disposition |
