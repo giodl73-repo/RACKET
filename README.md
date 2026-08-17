@@ -18,6 +18,10 @@ cargo test --quiet
 ## Relationship to COURT
 
 - COURT defines portable state/action/snapshot/scene contracts.
+- COURT's
+  [compatibility policy](https://github.com/giodl73-repo/COURT/blob/main/docs/compatibility.md)
+  makes RACKET the mandatory first downstream breakage rehearsal and defines
+  the migration or last-passing-revision rollback path.
 - RACKET consumes those contracts as an engine adapter.
 - Product repos own rules, fantasy, and scene direction.
 - RACKET reports unsupported COURT features explicitly instead of silently
