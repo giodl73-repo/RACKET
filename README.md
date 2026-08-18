@@ -15,6 +15,17 @@ RACKET's next expansion is gated by COURT's MIT-course-grounded specs, especiall
 cargo test --quiet
 ```
 
+Focused retained proof:
+
+```powershell
+cargo test --quiet --test proof_surface
+```
+
+`crates/racket-core/tests/fixtures/runtime-proof.json` records one accepted
+ready report and one structured not-ready report with an `action-unavailable`
+diagnostic. The integration test exercises the public COURT-to-RACKET adapter
+path and compares both outcomes to that retained evidence.
+
 ## Relationship to COURT
 
 - COURT defines portable state/action/snapshot/scene contracts.

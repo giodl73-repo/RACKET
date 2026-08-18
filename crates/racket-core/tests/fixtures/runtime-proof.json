@@ -1,0 +1,19 @@
+{
+  "accepted": {
+    "completed": true,
+    "frameCount": 2,
+    "readyFrameCount": 2,
+    "diagnostics": []
+  },
+  "rejected": {
+    "completed": false,
+    "frameCount": 2,
+    "readyFrameCount": 0,
+    "diagnostics": [
+      {
+        "code": "action-unavailable",
+        "message": "Action 'serve' unavailable: The product disabled this action."
+      }
+    ]
+  }
+}

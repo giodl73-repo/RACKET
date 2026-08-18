@@ -5,6 +5,7 @@ version = 4
 [[package]]
 name = "court-core"
 version = "0.1.0"
+source = "git+https://github.com/giodl73-repo/COURT.git?branch=main#bbdcf567ad6a34e677897e1e1a196b78e9a90ee2"
 dependencies = [
  "rune-core",
  "rune-derive",
