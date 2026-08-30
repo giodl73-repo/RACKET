@@ -48,9 +48,9 @@ cargo test --quiet
 
 ## Role Review Summary
 
-RACKET does not currently expose `.roles/`. Mission review used documented
-product lenses: COURT contract steward, engine adapter maintainer, product
-boundary steward, runtime diagnostics auditor, and future renderer reviewer.
+RACKET now exposes `.roles/ROLE.md`. Mission review uses the current Adapter
+Boundary Steward, Runtime Determinism Auditor, Compatibility Gatekeeper, and
+Product Integrator panel; older product-lens names map to those local roles.
 
 Findings:
 

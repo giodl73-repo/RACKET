@@ -33,6 +33,8 @@ implementation specs.
 
 ## Role Review Summary
 
-RACKET does not currently expose `.roles/`; documented product lenses were used.
+RACKET now exposes `.roles/ROLE.md`; documented product lenses map to the local
+Adapter Boundary Steward, Runtime Determinism Auditor, Compatibility Gatekeeper,
+and Product Integrator panel.
 No critical or major actionable trace gaps remain outside the listed
 work-package candidates.
