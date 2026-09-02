@@ -78,3 +78,23 @@ text misleads later agents about available review lenses.
 
 **Evidence:** `.roles/ROLE.md`, `docs/vtrace/MISSION.md`,
 `docs/vtrace/TRACE.md`, and `git diff --check`.
+
+## RACKET-INV-06: Adapter, Renderer, And COURT Boundaries Are Machine-Readable
+
+**Status:** VERIFIED
+
+**Claim:** RACKET keeps adapter proof, renderer expansion, and COURT contract
+ownership boundaries in a machine-readable manifest that is also routed through
+roles, public docs, and the focused pitfall policy test.
+
+**Why it matters:** A useful engine adapter fails when fixture proof sounds like
+product readiness, renderer work starts from momentum, or compatibility shims
+turn RACKET into a parallel COURT contract source.
+
+**Enforcement:** The focused pitfall policy test asserts the boundary manifest,
+role routing, README, product plan, VTRACE interfaces, runtime behavior, and
+RUNE descriptor evidence.
+
+**Evidence:** `docs/vtrace/pitfall-boundaries.v1.json`, `.roles/ROLE.md`,
+`README.md`, `PRODUCT_PLAN.md`, `docs/vtrace/INTERFACES.md`, and
+`crates/racket-core/tests/pitfall_policy.rs`.

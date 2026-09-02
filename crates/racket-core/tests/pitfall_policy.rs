@@ -21,6 +21,36 @@ fn open_pitfalls_remain_adapter_and_fixture_boundaries() {
     ] {
         assert_contains(&pitfalls, field);
     }
+    assert_contains(&pitfalls, "MITIGATED");
+
+    let boundary_manifest = repo_text("docs/vtrace/pitfall-boundaries.v1.json");
+    for required in [
+        "RACKET-PF-01",
+        "RACKET-PF-02",
+        "RACKET-PF-03",
+        "product readiness",
+        "renderer work is next by default",
+        "RACKET-owned COURT schema",
+        "named product fixture need",
+        "VTRACE work-package creation",
+        "COURT reviewed snapshot field",
+    ] {
+        assert_contains(&boundary_manifest, required);
+    }
+
+    let roles = repo_text(".roles/ROLE.md");
+    for required in [
+        "PITFALL gate routing",
+        "Product Integrator",
+        "Adapter Boundary Steward",
+        "Runtime Determinism Auditor",
+        "Compatibility Gatekeeper",
+        "named product fixture need",
+        "could fork",
+        "COURT contract truth",
+    ] {
+        assert_contains(&roles, required);
+    }
 
     let accepted = run_runtime_loop(
         &snapshot(CourtActionAvailability::Legal),
@@ -51,14 +81,17 @@ fn open_pitfalls_remain_adapter_and_fixture_boundaries() {
     assert_contains(&readme, "Renderer, backend, and input selection");
     assert_contains(
         &readme,
-        "remain deferred until a product fixture needs them",
+        "remain deferred until a named product fixture needs them",
     );
+    assert_contains(&readme, "adapter compatibility evidence only");
     assert_contains(&readme, "No fork of COURT contracts");
 
     let product_plan = repo_text("PRODUCT_PLAN.md");
     assert_contains(&product_plan, "without knowing");
     assert_contains(&product_plan, "the product's rules");
     assert_contains(&product_plan, "once the contract is stable");
+    assert_contains(&product_plan, "Passing");
+    assert_contains(&product_plan, "adapter proof is not product readiness");
 
     let interfaces = repo_text("docs/vtrace/INTERFACES.md");
     assert_contains(&interfaces, "RACKET now exposes `.roles/ROLE.md`");

@@ -2,7 +2,7 @@
 
 ## RACKET-PF-01: Adapter Proof Becomes Product Readiness
 
-**Status:** OPEN
+**Status:** MITIGATED
 
 **Pattern:** A passing RACKET frame-plan, runtime, proof-surface, AMAZE, or
 TIGRIS fixture is described as product readiness rather than adapter
@@ -34,16 +34,19 @@ product repo owner.
 real repos, so adapter proof can sound like game readiness.
 
 **Structural solution:** Keep product readiness claims in product repos and
-require Product Integrator review before promotion.
+require Product Integrator and Adapter Boundary Steward review before
+promotion, with machine-readable blocked claims for adapter-proof overreach.
 
-**Evidence:** `docs/vtrace/VALIDATION.md`, `docs/vtrace/WORK_PACKAGES.md`,
-`.roles/stakeholders/product-integrator.md`, and `README.md`.
+**Evidence:** `docs/vtrace/pitfall-boundaries.v1.json`,
+`docs/vtrace/VALIDATION.md`, `docs/vtrace/WORK_PACKAGES.md`,
+`.roles/ROLE.md`, `.roles/stakeholders/product-integrator.md`, and
+`README.md`.
 
 **Test:** `cargo test --quiet --test pitfall_policy`.
 
 ## RACKET-PF-02: Renderer Gate Opens Without Fixture Need
 
-**Status:** OPEN
+**Status:** MITIGATED
 
 **Pattern:** Macroquad, browser, input, backend, or asset-pipeline work begins
 because a renderer is attractive, not because a named product fixture needs it.
@@ -74,16 +77,16 @@ owner.
 after frame plans, even though VTRACE keeps the gate deferred.
 
 **Structural solution:** Keep renderer/backend/input work gated by explicit
-fixture need, role review, and VTRACE work-package creation.
+named fixture need, role review, and VTRACE work-package creation.
 
-**Evidence:** `PRODUCT_PLAN.md`, `docs/vtrace/REVIEW.md`,
-`docs/vtrace/WORK_PACKAGES.md`, and `.roles/ROLE.md`.
+**Evidence:** `docs/vtrace/pitfall-boundaries.v1.json`, `PRODUCT_PLAN.md`,
+`docs/vtrace/REVIEW.md`, `docs/vtrace/WORK_PACKAGES.md`, and `.roles/ROLE.md`.
 
 **Test:** `cargo test --quiet --test pitfall_policy`.
 
 ## RACKET-PF-03: COURT Compatibility Proof Becomes Contract Fork
 
-**Status:** OPEN
+**Status:** MITIGATED
 
 **Pattern:** RACKET adds compatibility shims, local schemas, or descriptor
 fields that quietly fork COURT contracts instead of consuming reviewed COURT
@@ -116,11 +119,14 @@ contract owner.
 COURT is no longer the source of contract truth.
 
 **Structural solution:** Require Compatibility Gatekeeper and Adapter Boundary
-Steward review before COURT mapping or diagnostic changes.
+Steward review before COURT mapping or diagnostic changes, and block any local
+schema, shim, descriptor, or public API change that makes RACKET a COURT
+contract source.
 
-**Evidence:** `.roles/parliament/compatibility-gatekeeper.md`,
-`.roles/parliament/adapter-boundary-steward.md`, `README.md`, and
-`docs/vtrace/INTERFACES.md`.
+**Evidence:** `docs/vtrace/pitfall-boundaries.v1.json`,
+`.roles/parliament/compatibility-gatekeeper.md`,
+`.roles/parliament/adapter-boundary-steward.md`, `.roles/ROLE.md`,
+`README.md`, and `docs/vtrace/INTERFACES.md`.
 
 **Test:** `cargo test --quiet --test pitfall_policy`.
 

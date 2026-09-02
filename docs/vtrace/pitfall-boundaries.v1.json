@@ -1,0 +1,102 @@
+{
+  "$schema": "racket.pitfall-boundaries.v1",
+  "owner": "RACKET maintainer",
+  "purpose": "Machine-readable boundaries for adapter proof, renderer expansion, and COURT contract ownership.",
+  "authority": {
+    "adapter_proof": "deterministic evidence that RACKET can consume a named COURT or product fixture snapshot",
+    "product_readiness": "product repository decision over rules, assets, scene direction, runtime policy, and user-facing tests",
+    "renderer_gate": "explicit named product fixture need plus role review and VTRACE work package",
+    "court_contract_truth": "COURT reviewed snapshot, scene, action, and compatibility policy fields",
+    "racket_contract_scope": "adapter mapping, diagnostics, windowless runtime reports, and RUNE descriptor evidence"
+  },
+  "pitfall_boundaries": [
+    {
+      "entryId": "RACKET-PF-01",
+      "requiredOwners": [
+        "Product Integrator",
+        "Adapter Boundary Steward",
+        "affected product repo owner"
+      ],
+      "sourceLayer": "frame-plan reports, runtime reports, proof-surface fixtures, AMAZE/TIGRIS fixtures, README status, release notes, and portfolio dependency updates",
+      "maySupport": [
+        "adapter compatibility for a named fixture",
+        "deterministic runtime proof",
+        "diagnostic coverage for unsupported fields",
+        "product-owned readiness rehearsal input"
+      ],
+      "blockedClaims": [
+        "product readiness",
+        "game-design approval",
+        "renderer readiness",
+        "customer release evidence",
+        "rules ownership transfer",
+        "asset readiness"
+      ],
+      "requiredEvidence": [
+        "named product fixture",
+        "product-owned rules and readiness citation",
+        "retained ready and not-ready adapter reports",
+        "RACKET role review",
+        "product repository validation"
+      ]
+    },
+    {
+      "entryId": "RACKET-PF-02",
+      "requiredOwners": [
+        "Runtime Determinism Auditor",
+        "Product Integrator",
+        "future renderer owner"
+      ],
+      "sourceLayer": "PRODUCT_PLAN, VTRACE work packages, runtime waves, demos, backend-selection notes, and product fixture requests",
+      "maySupport": [
+        "deferred renderer backlog",
+        "backend exploration note",
+        "explicit product-fixture-driven expansion",
+        "windowless runtime confidence"
+      ],
+      "blockedClaims": [
+        "renderer work is next by default",
+        "backend selection without fixture need",
+        "input pipeline commitment without fixture need",
+        "asset pipeline commitment without fixture need",
+        "runtime realism as readiness"
+      ],
+      "requiredEvidence": [
+        "named product fixture need",
+        "stable adapter evidence",
+        "role review",
+        "VTRACE work-package creation",
+        "deterministic runtime proof"
+      ]
+    },
+    {
+      "entryId": "RACKET-PF-03",
+      "requiredOwners": [
+        "Compatibility Gatekeeper",
+        "Adapter Boundary Steward",
+        "COURT contract owner"
+      ],
+      "sourceLayer": "COURT snapshot mapping, RUNE descriptors, public Rust API, fixture migrations, VTRACE interfaces, and compatibility policy",
+      "maySupport": [
+        "COURT-reviewed field consumption",
+        "RACKET adapter diagnostic",
+        "migration rehearsal",
+        "RUNE descriptor for adapter evidence"
+      ],
+      "blockedClaims": [
+        "RACKET-owned COURT schema",
+        "local contract fork",
+        "compatibility shim as source of truth",
+        "descriptor field that changes COURT semantics",
+        "green compatibility without shared contract"
+      ],
+      "requiredEvidence": [
+        "COURT reviewed snapshot field",
+        "COURT compatibility policy citation",
+        "adapter mapping test",
+        "diagnostic fixture",
+        "RUNE descriptor regeneration"
+      ]
+    }
+  ]
+}
