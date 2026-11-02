@@ -30,9 +30,9 @@ Baseline date: 2026-06-01
 
 ## Role Review Summary
 
-RACKET does not currently expose `.roles/`. Requirements review used documented
-product lenses: COURT contract steward, engine adapter maintainer, product
-boundary steward, runtime diagnostics auditor, and future renderer reviewer.
+RACKET now exposes `.roles/ROLE.md`. Requirements review uses the current
+Adapter Boundary Steward, Runtime Determinism Auditor, Compatibility Gatekeeper,
+and Product Integrator panel; older product-lens names map to those local roles.
 
 Findings:
 
@@ -48,3 +48,7 @@ Fixed-point decision:
 No critical or major actionable findings remain for the requirements stage.
 Exact specs, interface schemas, verification command levels, and work packages
 are deferred to later VTRACE stages.
+
+## REQ-RCK-008 — windowless diagnostic workbench
+
+Expose existing windowless diagnostics for TIGRIS Parliament handoff reproduction through a bounded browser client; retain COURT decoding and product authority.

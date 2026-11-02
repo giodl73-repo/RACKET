@@ -37,9 +37,9 @@ Baseline date: 2026-06-01
 
 ## Role Review Summary
 
-RACKET does not currently expose `.roles/`. Specification review used documented
-product lenses: COURT contract steward, engine adapter maintainer, product
-boundary steward, runtime diagnostics auditor, and future renderer reviewer.
+RACKET now exposes `.roles/ROLE.md`. Specification review uses the current
+Adapter Boundary Steward, Runtime Determinism Auditor, Compatibility Gatekeeper,
+and Product Integrator panel; older product-lens names map to those local roles.
 
 Findings:
 
@@ -55,3 +55,7 @@ Fixed-point decision:
 No critical or major actionable findings remain for the specification baseline.
 Gate is `pass_with_risk` because exact COURT field taxonomy, renderer readiness
 checklist, and evidence labels are deferred.
+
+## SPEC-RCK-006 — windowless diagnostic workbench
+
+REQ-RCK-008: browser/workbench must call unchanged native frame-plan/runtime functions, reject resource excess before frame cloning, and preserve diagnostic-bearing native readiness. COURT owns strict snapshot decoding.

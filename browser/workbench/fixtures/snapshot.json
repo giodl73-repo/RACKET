@@ -1,0 +1,106 @@
+{
+  "metadata": {
+    "experience_id": "racket:authored-example",
+    "experience_version": "0.1.0",
+    "surface": "Browser",
+    "scene_contract_version": "court.scene.v1"
+  },
+  "experience": {
+    "id": "racket:authored-example",
+    "title": "RACKET synthetic diagnostic table",
+    "surface": "Browser",
+    "intent": {
+      "product_owner": "RACKET workbench example",
+      "audience": "Framework readers",
+      "design_thesis": "Authored diagnostic example, not a TIGRIS product scene.",
+      "non_goals": [
+        "No game or renderer",
+        "No assessment claim"
+      ]
+    },
+    "provenance": {
+      "class": "ProductAuthored",
+      "source_id": "racket:authored-example"
+    }
+  },
+  "state_label": "Example snapshot; no running host",
+  "actions": [
+    {
+      "id": "inspect",
+      "label": "Inspect",
+      "command": "inspect",
+      "availability": {
+        "kind": "Legal"
+      }
+    },
+    {
+      "id": "open",
+      "label": "Open",
+      "command": "open",
+      "availability": {
+        "kind": "Unavailable",
+        "reason": "Product declares locked."
+      }
+    },
+    {
+      "id": "jump",
+      "label": "Jump",
+      "command": "jump",
+      "availability": {
+        "kind": "GuidedIllegal",
+        "guidance": "Product guidance only."
+      }
+    },
+    {
+      "id": "reset",
+      "label": "Reset",
+      "command": "reset",
+      "availability": {
+        "kind": "Destructive",
+        "warning": "Product declares a destructive action."
+      }
+    },
+    {
+      "id": "debug",
+      "label": "Debug",
+      "command": "debug",
+      "availability": {
+        "kind": "Diagnostic",
+        "note": "Harness only."
+      }
+    }
+  ],
+  "scene": [
+    {
+      "id": "surface",
+      "label": "Example surface",
+      "player_read_label": "Example surface",
+      "product_meaning": "Authored portable-contract example",
+      "role": "Surface",
+      "x": 0,
+      "y": 0,
+      "width": 100,
+      "height": 30,
+      "provenance": null,
+      "unsupported_features": []
+    },
+    {
+      "id": "control",
+      "label": "Example control",
+      "player_read_label": "Example control",
+      "product_meaning": "Authored portable-contract example",
+      "role": "Control",
+      "x": 0,
+      "y": 0,
+      "width": 100,
+      "height": 30,
+      "provenance": null,
+      "unsupported_features": [
+        {
+          "feature": "example-animation",
+          "fallback": "Text label"
+        }
+      ]
+    }
+  ]
+}

@@ -24,7 +24,10 @@ cargo test --quiet --test proof_surface
 `crates/racket-core/tests/fixtures/runtime-proof.json` records one accepted
 ready report and one structured not-ready report with an `action-unavailable`
 diagnostic. The integration test exercises the public COURT-to-RACKET adapter
-path and compares both outcomes to that retained evidence.
+path and compares both outcomes to that retained evidence. The proof is
+adapter compatibility evidence only; product readiness remains owned by the
+product repo's rules, assets, scene direction, runtime policy, and user-facing
+tests.
 
 ## Relationship to COURT
 
@@ -45,7 +48,8 @@ path and compares both outcomes to that retained evidence.
 The foundation wave is wrapped at frame plans, compatibility diagnostics, and a
 deterministic windowless runtime loop. AMAZE Prism Vault and TIGRIS Parliament
 exercise RACKET from their product repos. Renderer, backend, and input selection
-remain deferred until a product fixture needs them.
+remain deferred until a named product fixture needs them and a VTRACE work
+package records the role-reviewed expansion.
 
 ## RUNE contract evidence
 
@@ -69,3 +73,14 @@ non-software content is licensed CC BY-NC 4.0 (copyright Gio Della-Libera);
 commercial use of that content requires separate written permission.
 Third-party material remains under its own terms.
 See [LICENSE](./LICENSE) for the complete notice.
+
+## Browser frame-plan diagnostics
+
+Use the [Rust/WASM frame workbench](https://giodl73-repo.github.io/RACKET/workbench/)
+with your COURT snapshot and a frame count to inspect existing native diagnostics,
+plans and repeated windowless frames. Complete source, compiled WASM, build
+instructions and original notices are downloadable from the workbench. The
+[scope and qualification record](context/waves/2026-11-02-wasm-frame-workbench/README.md)
+retains the named TIGRIS diagnostic need, entry review and delivery gates.
+Native readiness is not product or renderer approval. Source/build commands
+are in `browser/workbench/README.md`; check the wave for dated delivery evidence.
