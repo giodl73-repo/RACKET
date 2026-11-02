@@ -80,7 +80,7 @@ for package in packages:
     for notice in package['notices']:
         path=notice['path'].removeprefix('licenses/')
         links.append('<p><a href="'+html.escape(path)+'">'+html.escape(path)+'</a></p>')
-(SITE/'licenses/index.html').write_text('<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>COURT licenses</title><body>'+''.join(links)+'</body></html>',encoding='utf-8')
+(SITE/'licenses/index.html').write_text('<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RACKET licenses</title><body>'+''.join(links)+'</body></html>',encoding='utf-8')
 copy(P/'BUILD.md',SITE/'BUILD.md')
 provenance={'schema':'racket-workbench-release-v1','commit':head,'foundation_source':'e2166f6f9f304fca953d4c9b8aaf0d478a52fe3e','repository':'https://github.com/giodl73-repo/RACKET','exact_full_source':'https://github.com/giodl73-repo/RACKET/archive/'+head+'.zip','rustc':run('rustc','+1.95.0','-vV').decode().strip(),'wasm_bindgen':'0.2.127','source_zip_sha256':digest((SITE/'source.zip').read_bytes()),'wasm_sha256':digest((SITE/'pkg/racket_workbench_bg.wasm').read_bytes()),'legal_packages':len(packages),'rust_notice_files':len(rust_notices),'landing_index_sha256':digest(landing),'cross_directory_binary_identity':'Not established. Verify native/WASM response parity instead.','scope':'Existing RACKET windowless frame-plan diagnostics. Native count readiness and completion do not imply rendering, product/asset readiness, source custody or assessment success.'}
 write_json(SITE/'provenance.json',provenance)

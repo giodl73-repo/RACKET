@@ -5,6 +5,7 @@ import {execFileSync} from 'node:child_process';
 test('every packaged file matches inventory and exact source provenance',async({page,request})=>{
  test.setTimeout(180000);
  await page.goto('./');
+ await expect(page.getByRole('link',{name:'Native Rust source',exact:true})).toHaveAttribute('href','https://github.com/giodl73-repo/RACKET/tree/main/crates/racket-core/src');
  const inventory=await (await request.get('./inventory.json')).json();
  const provenance=await (await request.get('./provenance.json')).json();
  const expected=process.env.RACKET_EXPECTED_COMMIT || execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();
