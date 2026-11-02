@@ -55,3 +55,7 @@ Fixed-point decision:
 No critical or major actionable findings remain for the specification baseline.
 Gate is `pass_with_risk` because exact COURT field taxonomy, renderer readiness
 checklist, and evidence labels are deferred.
+
+## SPEC-RCK-006 — windowless diagnostic workbench
+
+REQ-RCK-008: browser/workbench must call unchanged native frame-plan/runtime functions, reject resource excess before frame cloning, and preserve diagnostic-bearing native readiness. COURT owns strict snapshot decoding.

@@ -33,3 +33,7 @@ Integrator panel; older product-lens names map to those local roles.
 
 No critical or major actionable findings remain. Exact renderer readiness tasks
 move to trace and work packages.
+
+## VAL-RCK-006 — windowless diagnostic workbench
+
+VER-RCK-007: a maintainer can open/edit a COURT snapshot and textual frame count, inspect every native frame/diagnostic and download reports/originals without confusing completion with product or renderer readiness. Hosted and live checks remain required.

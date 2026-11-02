@@ -34,3 +34,7 @@ Integrator panel; older product-lens names map to those local roles.
 No critical or major actionable findings remain. Exact COURT field taxonomy,
 renderer readiness checklist, and product fixture labels are deferred to later
 stages.
+
+## IF-RCK-006 — windowless diagnostic workbench
+
+SPEC-RCK-006: inspect_frames(snapshot_text, frame_count_text) returns a JSON diagnostic report. Limits and standalone CLI are defined in browser/workbench/README.md; no product input/action or renderer interface is added.

@@ -48,3 +48,7 @@ Fixed-point decision:
 No critical or major actionable findings remain for the requirements stage.
 Exact specs, interface schemas, verification command levels, and work packages
 are deferred to later VTRACE stages.
+
+## REQ-RCK-008 — windowless diagnostic workbench
+
+Expose existing windowless diagnostics for TIGRIS Parliament handoff reproduction through a bounded browser client; retain COURT decoding and product authority.

@@ -73,3 +73,11 @@ non-software content is licensed CC BY-NC 4.0 (copyright Gio Della-Libera);
 commercial use of that content requires separate written permission.
 Third-party material remains under its own terms.
 See [LICENSE](./LICENSE) for the complete notice.
+
+## Browser frame-plan diagnostics
+
+A bounded Rust/WASM workbench is being qualified in `browser/workbench`. It accepts
+your COURT snapshot and a frame count, then exposes existing native diagnostics,
+plans and repeated windowless frames. [Scope and entry review](context/waves/2026-11-02-wasm-frame-workbench/README.md)
+retain the named TIGRIS diagnostic need and renderer/backend gate. Delivery is
+pending; native readiness is not product or renderer approval.

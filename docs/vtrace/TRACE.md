@@ -38,3 +38,7 @@ Adapter Boundary Steward, Runtime Determinism Auditor, Compatibility Gatekeeper,
 and Product Integrator panel.
 No critical or major actionable trace gaps remain outside the listed
 work-package candidates.
+
+## TR-RCK-006 — windowless diagnostic workbench
+
+TIGRIS Parliament diagnostic need → REQ-RCK-008 → SPEC-RCK-006 → IF-RCK-006 → VER-RCK-007 → VAL-RCK-006 → WP-RCK-004. Entry role review precedes implementation; exact delivery evidence is retained in context/waves/2026-11-02-wasm-frame-workbench.

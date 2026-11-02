@@ -2,3 +2,7 @@
 **/*.rs.bk
 
 .cargo/config.toml
+
+/browser/workbench/node_modules/
+/browser/workbench/.cache/
+/browser/workbench/test-results/

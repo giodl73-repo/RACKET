@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RACKET - Windowless frame workbench</title><link rel="stylesheet" href="./style.css"></head>
+<body><header><a class="brand" href="https://github.com/giodl73-repo/RACKET">RACKET / windowless diagnostics</a><span class="badge">Browser preview</span>
+<h1>Inspect a snapshot. Replay its frame plan.</h1>
+<p class="lead">Run RACKET's existing native frame-plan diagnostics and repeat its windowless runtime over your COURT snapshot. Start with an authored example or open your own JSON.</p></header>
+<main><section class="workspace" aria-label="Snapshot workbench"><div class="editor panel">
+<div class="section-head"><h2>1. Supply a snapshot</h2><span id="bytes">0 UTF-8 bytes</span></div>
+<div class="toolbar"><button id="example">Load authored example</button><button id="open-file">Open JSON file</button><input id="file" type="file" accept=".json,application/json,text/plain" hidden></div>
+<p id="file-status" role="status">Files stay in this browser session. No input is uploaded.</p>
+<label for="input">Snapshot JSON</label><textarea id="input" spellcheck="false" aria-describedby="limits file-status"></textarea>
+<p id="limits" class="fine">128 KiB UTF-8; 0–32 repeated frames; up to 256 actions and 256 scene nodes. Coordinates and extents use signed 32-bit integers. Unknown fields reject the entire input.</p>
+<label for="frames">Windowless frame count (0–32)</label><input id="frames" type="text" inputmode="numeric" value="3" aria-describedby="limits">
+<div class="toolbar"><button id="inspect" class="primary" disabled>Inspect snapshot</button><button id="restart">Restart engine</button><button id="lf-copy" disabled>Use an LF copy</button></div>
+<p id="status" role="status">Starting Rust engine...</p>
+<details><summary>How text and originals are kept</summary><p>Opened UTF-8 bytes, including BOM and CRLF, remain available as the original download. The editor displays line endings as LF. Inspection and current-text download keep the loaded text until you edit it. Editing uses the editor's LF text. An explicit LF copy removes a leading BOM and normalizes CRLF/CR; the original download stays intact.</p></details>
+<div class="downloads"><button id="original" disabled>Download opened original</button><button id="current">Download current text</button></div>
+</div><div class="results panel"><div class="section-head"><h2>2. Inspect native plans and diagnostics</h2><span id="result-state" class="badge">No report</span></div>
+<p class="boundary">Native readiness counts Surface nodes and player-available commands. Diagnostics do not veto readiness or completion. Frames repeat one snapshot: no actions, game state evolution or rendering. These outputs do not certify product/asset readiness, provenance or assessment success.</p>
+<div id="summary"><p class="empty">Load the example and choose Inspect snapshot to see the native query results.</p></div>
+<div class="downloads"><button id="download" disabled>Download report JSON</button></div>
+<details><summary>Full native frame report and admitted snapshot</summary><pre id="report" tabindex="0" aria-label="Inspection report">No report yet.</pre></details>
+</div></section>
+<section class="delivery panel"><h2>Source and delivery</h2><p>Unchanged RACKET core owns plans, diagnostics and runtime results. COURT owns snapshot decoding and query observations. This bounded adapter runs both in a worker. Source references are displayed as caller declarations and are never opened.</p>
+<nav aria-label="Source and downloads"><a href="https://github.com/giodl73-repo/RACKET">Repository</a><a href="https://github.com/giodl73-repo/RACKET/tree/main/crates/court-core/src">Native Rust source</a><a href="./source.zip" download>Complete Rust source ZIP</a><a href="./pkg/racket_workbench_bg.wasm" download>Compiled WASM</a><a href="./BUILD.md">Build instructions</a><a href="./provenance.json">Build provenance</a><a href="./licenses/index.html">Licenses and notices</a></nav>
+<p class="fine">Source, build and license downloads work independently of the Rust engine. Build provenance identifies the exact source revision and scope.</p></section></main>
+<footer>RACKET maps COURT snapshots; product rules, rendering and assets retain their own gates.</footer>
+<script type="module" src="./app.js"></script></body></html>
