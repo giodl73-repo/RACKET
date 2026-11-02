@@ -76,8 +76,11 @@ See [LICENSE](./LICENSE) for the complete notice.
 
 ## Browser frame-plan diagnostics
 
-A bounded Rust/WASM workbench is being qualified in `browser/workbench`. It accepts
-your COURT snapshot and a frame count, then exposes existing native diagnostics,
-plans and repeated windowless frames. [Scope and entry review](context/waves/2026-11-02-wasm-frame-workbench/README.md)
-retain the named TIGRIS diagnostic need and renderer/backend gate. Delivery is
-pending; native readiness is not product or renderer approval.
+Use the [Rust/WASM frame workbench](https://giodl73-repo.github.io/RACKET/workbench/)
+with your COURT snapshot and a frame count to inspect existing native diagnostics,
+plans and repeated windowless frames. Complete source, compiled WASM, build
+instructions and original notices are downloadable from the workbench. The
+[scope and qualification record](context/waves/2026-11-02-wasm-frame-workbench/README.md)
+retains the named TIGRIS diagnostic need, entry review and delivery gates.
+Native readiness is not product or renderer approval. Source/build commands
+are in `browser/workbench/README.md`; check the wave for dated delivery evidence.
